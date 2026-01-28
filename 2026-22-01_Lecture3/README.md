@@ -1,6 +1,36 @@
-This project demonstrates separation of concerns. This is based on the Lecture 2 discussion in our ML Ops class as of January 15, 2026.
+# Lecture 3 — Dockerizing a FastAPI Application
 
-- Fastapi logic can be found in main.py
-- Scoring logic is in scoring.py
+This project is a continuation of Lecture 2 and demonstrates how to containerize a simple FastAPI application using Docker, as part of the MLOps course.
 
-The scoring algorithm is a placeholder and will be implemented in future lectures.
+The goal of this lecture is to show how an API can be packaged with its dependencies and run consistently across environments.
+
+---
+
+## Project Structure
+
+- `main.py`  
+  Contains the FastAPI application and API routes.
+
+- `scoring.py`  
+  Contains placeholder scoring logic used by the API.
+
+- `requirements.txt`  
+  Lists the Python dependencies required to run the application.
+
+- `Dockerfile`  
+  Defines how to build the Docker image for the API.
+
+---
+
+## Docker Instructions (Lecture 3)
+
+### Build the Docker image
+
+From inside the `2026-22-01_Lecture3` directory, run:
+
+```bash
+docker build -t lecture3-api .
+
+### Run the container
+docker run -p 8000:8000 lecture3-api
+docker run -p 8001:8000 lecture3-api
